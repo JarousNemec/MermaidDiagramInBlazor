@@ -1,0 +1,29 @@
+graph TB
+
+    subgraph lan2[LAN2 192.168.20.0/24]
+    direction TB
+    router1[<img src="router.svg" width="80" height="80"/><img src="red.svg" width="20" height="20"/> r1.cisco.com<br/>192.168.20.1]
+    switch1[<img src="switch.svg" width="80" height="80"/><img src="red.svg" width="20" height="20"/> s1.cisco.com<br/>192.168.20.2]
+    switch2[<img src="switch.svg" width="80" height="80"/><img src="red.svg" width="20" height="20"/> s2.cisco.com<br/>192.168.20.3]
+    PC1[<img src="computer.svg" width="80" height="80"/><img src="red.svg" width="20" height="20"/> PC 1<br/>192.168.20.101]
+    PC2[<img src="computer.svg" width="80" height="80"/><img src="red.svg" width="20" height="20"/> PC 2<br/>192.168.20.102]
+    PC3[<img src="computer.svg" width="80" height="80"/><img src="red.svg" width="20" height="20"/> PC 3<br/>192.168.20.103]
+    PC4[<img src="computer.svg" width="80" height="80"/><img src="red.svg" width="20" height="20"/> PC 4<br/>192.168.20.104]
+    server1[<img src="server.svg" width="80" height="80"/><img src="red.svg" width="20" height="20"/> Server 1<br/>192.168.20.201]
+    server2[<img src="server.svg" width="80" height="80"/><img src="red.svg" width="20" height="20"/> Server 2<br/>192.168.20.202]
+    end
+
+    router1 -->|Gi 0/0/2 - Gi 0/0/1| switch1
+    router1 -->|Gi 0/0/3 - Gi 0/0/1| switch2
+
+    switch1 -->|Fa 0/0/1 - Fa 0/1| PC1
+    switch1 -->|Fa 0/0/2 - Fa 0/1| PC2
+    switch1 -->|Gi 0/0/2 - Gi 0/1| server1
+
+    switch2 -->|Fa 0/0/1 - Fa 0/1| PC3
+    switch2 -->|Fa 0/0/2 - Fa 0/1| PC4
+    switch2 -->|Gi 0/0/3 - Gi 0/1| server2
+    
+    click router1 "/weather/r1.cisco.com"
+    click switch1 "/weather/s1.cisco.com"
+    click switch2 "/weather/s2.cisco.com"

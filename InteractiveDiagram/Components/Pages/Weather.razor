@@ -1,0 +1,79 @@
+﻿@page "/weather"
+@page "/weather/{Id}"
+@using System.Text.Json
+@rendermode InteractiveServer
+
+<div style="display: flex; width: 10vw; gap: 10px">
+    <h5 for="department">Select network to display</h5>
+    <div style="width:3vw">
+        <InputSelect id="department" @bind-Value="value" class="form-control form-select">
+            <option value="all">All</option>
+            <option value="lan1">Lan1</option>
+            <option value="lan2">Lan2</option>
+        </InputSelect>
+    </div>
+</div>
+<MermaidDiagram Definition="@this.diagramDef"/>
+
+<div style="max-width: 50vw; display: flex; gap: 10px">
+    <Card Style="width:18rem;">
+        <CardBody>
+            <CardTitle Style="text-align: center"><h3>@Id</h3></CardTitle>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>Platform:</b> Cisco 4500</li>
+                <li class="list-group-item"><b>Version:</b> 11.1(10.4)</li>
+                <li class="list-group-item"><b>Capabilities:</b> Router</li>
+                <li class="list-group-item"><b>Description:</b> Ručně správcem dodaná poznámka k danému zařízení...</li>
+            </ul>
+        </CardBody>
+    </Card>
+    <Grid TItem="DeviceInterface"
+          Class="table table-hover table-bordered table-striped"
+          DataProvider="EmployeesDataProvider">
+
+        <GridColumns>
+            <GridColumn TItem="DeviceInterface" HeaderText="Interface name" HeaderTextAlignment="Alignment.Center">
+                @context.Name
+            </GridColumn>
+            <GridColumn TItem="DeviceInterface" HeaderText="State" HeaderTextAlignment="Alignment.Center">
+                <span style="color: @(context.State == "Up" ? "green" : "red")">@context.State</span>
+            </GridColumn>
+            <GridColumn TItem="DeviceInterface" HeaderText="Ip" HeaderTextAlignment="Alignment.Center">
+                @context.Ip
+            </GridColumn>
+        </GridColumns>
+
+    </Grid>
+</div>
+
+@code {
+    [Parameter] public string Id { get; set; }
+    private string value = string.Empty;
+    private IEnumerable<DeviceInterface>? _elements = new List<DeviceInterface>();
+
+    private async Task<GridDataProviderResult<DeviceInterface>> EmployeesDataProvider(GridDataProviderRequest<DeviceInterface> request)
+    {
+        return await Task.FromResult(request.ApplyTo(_elements));
+    }
+
+    string diagramDef = string.Empty;
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            diagramDef = File.ReadAllText("./diagram.txt");
+            var jsondata = File.ReadAllText("./data.json");
+            _elements = JsonSerializer.Deserialize<List<DeviceInterface>>(jsondata);
+            StateHasChanged();
+        }
+    }
+
+    private sealed class DeviceInterface
+    {
+        public string Name { get; set; }
+        public string State { get; set; }
+        public string Ip { get; set; }
+    }
+
+}

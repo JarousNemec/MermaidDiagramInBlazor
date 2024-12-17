@@ -1,0 +1,52 @@
+﻿[
+  {
+    "Name": "FastEthernet 0/1",
+    "State": "Up",
+    "Ip": "192.168.1.10"
+  },
+  {
+    "Name": "GigabitEthernet 0/3",
+    "State": "Up",
+    "Ip": "10.0.0.22"
+  },
+  {
+    "Name": "FastEthernet 1/5",
+    "State": "Up",
+    "Ip": "172.16.0.5"
+  },
+  {
+    "Name": "GigabitEthernet 0/2",
+    "State": "Down",
+    "Ip": "192.168.1.45"
+  },
+  {
+    "Name": "FastEthernet 0/12",
+    "State": "Down",
+    "Ip": "203.0.113.12"
+  },
+  {
+    "Name": "GigabitEthernet 1/4",
+    "State": "Down",
+    "Ip": "198.51.100.20"
+  },
+  {
+    "Name": "FastEthernet 1/7",
+    "State": "Down",
+    "Ip": "192.168.0.128"
+  },
+  {
+    "Name": "GigabitEthernet 0/6",
+    "State": "Up",
+    "Ip": "10.0.1.15"
+  },
+  {
+    "Name": "FastEthernet 0/18",
+    "State": "Up",
+    "Ip": "172.16.0.199"
+  },
+  {
+    "Name": "GigabitEthernet 1/9",
+    "State": "Up",
+    "Ip": "192.168.3.34"
+  }
+]

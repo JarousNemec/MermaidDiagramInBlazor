@@ -1,123 +1,175 @@
 ﻿@page "/"
-@* @inject IJSRuntime JsRuntime *@
-@* @rendermode InteractiveServer *@
-<PageTitle>Index</PageTitle>
-
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-@* <div class="mermaid" id="mermaid"> *@
-@*     journey *@
-@*     title My working day *@
-@*     section Go to work *@
-@*     Make tea: 5: Me *@
-@*     Go upstairs: 3: Me *@
-@*     Do work: 1: Me, Cat *@
-@*     section Go home *@
-@*     Go downstairs: 5: Me *@
-@*     Sit down: 5: Me *@
-@* </div> *@
-
-@* <div class="mermaid"> *@
-@*     architecture-beta *@
-@*     service left_disk(disk)[Disk] *@
-@*     service top_disk(disk)[Disk] *@
-@*     service bottom_disk(disk)[Disk] *@
-@*     service top_gateway(internet)[Gateway] *@
-@*     service bottom_gateway(internet)[Gateway] *@
-@*     junction junctionCenter *@
-@*     junction junctionRight *@
+@* $1$ @inject IJSRuntime JsRuntime #1# *@
+@* $1$ @rendermode InteractiveServer #1# *@
 @* *@
-@*     left_disk:R -- L:junctionCenter *@
-@*     top_disk:B -- T:junctionCenter *@
-@*     bottom_disk:T -- B:junctionCenter *@
-@*     junctionCenter:R -- L:junctionRight *@
-@*     top_gateway:B -- T:junctionRight *@
-@*     bottom_gateway:T -- B:junctionRight *@
 @* *@
-@* </div> *@
-@* <div class="mermaid"> *@
-@*     graph LR *@
-@*     subgraph Internet *@
-@*     direction LR *@
-@*     inet[🌐 Internet] *@
-@*     end *@
 @* *@
-@*     subgraph LAN *@
-@*     direction TB *@
-@*     router[📶 Router<br/>192.168.1.1] *@
-@*     switch1[🔀 Switch 1<br/>192.168.1.2] *@
-@*     switch2[🔀 Switch 2<br/>192.168.1.3] *@
-@*     PC1[💻 PC 1<br/>192.168.1.101] *@
-@*     PC2[💻 PC 2<br/>192.168.1.102] *@
-@*     PC3[💻 PC 3<br/>192.168.1.103] *@
-@*     PC4[💻 PC 4<br/>192.168.1.104] *@
-@*     server1[🖥️ Server 1<br/>192.168.1.201] *@
-@*     server2[🖥️ Server 2<br/>192.168.1.202] *@
-@*     end *@
+@* <PageTitle>Index</PageTitle> *@
 @* *@
-@*     inet -->|Port 0/1| router *@
-@*     router -->|Port 1/1| switch1 *@
+<h1>Mapa sítě</h1>
 @* *@
-@*     switch1 -->|Port 2/1| PC1 *@
-@*     switch1 -->|Port 2/2| PC2 *@
-@*     switch1 -->|Port 2/3| server1 *@
+@* Welcome to your new app. *@
 @* *@
-@*     router -->|Port 1/2| switch2 *@
-@*     switch2 -->|Port 3/1| PC3 *@
-@*     switch2 -->|Port 3/2| PC4 *@
-@*     switch2 -->|Port 3/3| server2 *@
-@* </div> *@
-
+@* $1$ <div class="mermaid" id="mermaid"> #1# *@
+@* $1$     journey #1# *@
+@* $1$     title My working day #1# *@
+@* $1$     section Go to work #1# *@
+@* $1$     Make tea: 5: Me #1# *@
+@* $1$     Go upstairs: 3: Me #1# *@
+@* $1$     Do work: 1: Me, Cat #1# *@
+@* $1$     section Go home #1# *@
+@* $1$     Go downstairs: 5: Me #1# *@
+@* $1$     Sit down: 5: Me #1# *@
+@* $1$ </div> #1# *@
+@* *@
+@* $1$ <div class="mermaid"> #1# *@
+@* $1$     architecture-beta #1# *@
+@* $1$     service left_disk(disk)[Disk] #1# *@
+@* $1$     service top_disk(disk)[Disk] #1# *@
+@* $1$     service bottom_disk(disk)[Disk] #1# *@
+@* $1$     service top_gateway(internet)[Gateway] #1# *@
+@* $1$     service bottom_gateway(internet)[Gateway] #1# *@
+@* $1$     junction junctionCenter #1# *@
+@* $1$     junction junctionRight #1# *@
+@* $1$ #1# *@
+@* $1$     left_disk:R -- L:junctionCenter #1# *@
+@* $1$     top_disk:B -- T:junctionCenter #1# *@
+@* $1$     bottom_disk:T -- B:junctionCenter #1# *@
+@* $1$     junctionCenter:R -- L:junctionRight #1# *@
+@* $1$     top_gateway:B -- T:junctionRight #1# *@
+@* $1$     bottom_gateway:T -- B:junctionRight #1# *@
+@* $1$ #1# *@
+@* $1$ </div> #1# *@
+@* $1$ <div class="mermaid"> #1# *@
+@* $1$     graph LR #1# *@
+@* $1$     subgraph Internet #1# *@
+@* $1$     direction LR #1# *@
+@* $1$     inet[🌐 Internet] #1# *@
+@* $1$     end #1# *@
+@* $1$ #1# *@
+@* $1$     subgraph LAN #1# *@
+@* $1$     direction TB #1# *@
+@* $1$     router[📶 Router<br/>192.168.1.1] #1# *@
+@* $1$     switch1[🔀 Switch 1<br/>192.168.1.2] #1# *@
+@* $1$     switch2[🔀 Switch 2<br/>192.168.1.3] #1# *@
+@* $1$     PC1[💻 PC 1<br/>192.168.1.101] #1# *@
+@* $1$     PC2[💻 PC 2<br/>192.168.1.102] #1# *@
+@* $1$     PC3[💻 PC 3<br/>192.168.1.103] #1# *@
+@* $1$     PC4[💻 PC 4<br/>192.168.1.104] #1# *@
+@* $1$     server1[🖥️ Server 1<br/>192.168.1.201] #1# *@
+@* $1$     server2[🖥️ Server 2<br/>192.168.1.202] #1# *@
+@* $1$     end #1# *@
+@* $1$ #1# *@
+@* $1$     inet -->|Port 0/1| router #1# *@
+@* $1$     router -->|Port 1/1| switch1 #1# *@
+@* $1$ #1# *@
+@* $1$     switch1 -->|Port 2/1| PC1 #1# *@
+@* $1$     switch1 -->|Port 2/2| PC2 #1# *@
+@* $1$     switch1 -->|Port 2/3| server1 #1# *@
+@* $1$ #1# *@
+@* $1$     router -->|Port 1/2| switch2 #1# *@
+@* $1$     switch2 -->|Port 3/1| PC3 #1# *@
+@* $1$     switch2 -->|Port 3/2| PC4 #1# *@
+@* $1$     switch2 -->|Port 3/3| server2 #1# *@
+@* $1$ </div> #1# *@
+@* *@
+@* $1$ <div class="mermaid"> #1# *@
+@* $1$     graph TB #1# *@
+@* $1$      #1# *@
+@* $1$     subgraph lan1[LAN1 192.168.10.0/24] #1# *@
+@* $1$     direction TB #1# *@
+@* $1$     router2[<img src="router.svg" width="80" height="80"/> Router<br/>192.168.10.1] #1# *@
+@* $1$     switch3[<img src="switch.svg" width="80" height="80"/> Switch 1<br/>192.168.10.2] #1# *@
+@* $1$     switch4[<img src="switch.svg" width="80" height="80"/> Switch 2<br/>192.168.10.3] #1# *@
+@* $1$     PC5[<img src="computer.svg" width="80" height="80"/> PC 1<br/>192.168.10.101] #1# *@
+@* $1$     PC6[<img src="computer.svg" width="80" height="80"/> PC 2<br/>192.168.10.102] #1# *@
+@* $1$     PC7[<img src="computer.svg" width="80" height="80"/> PC 3<br/>192.168.10.103] #1# *@
+@* $1$     PC8[<img src="computer.svg" width="80" height="80"/> PC 4<br/>192.168.10.104] #1# *@
+@* $1$     server3[<img src="server.svg" width="80" height="80"/> Server 1<br/>192.168.10.201] #1# *@
+@* $1$     server4[<img src="server.svg" width="80" height="80"/> Server 2<br/>192.168.10.202] #1# *@
+@* $1$     end #1# *@
+@* $1$ #1# *@
+@* $1$     subgraph lan2[LAN2 192.168.20.0/24] #1# *@
+@* $1$     direction TB #1# *@
+@* $1$     router[<img src="router.svg" width="80" height="80"/> Router<br/>192.168.20.1] #1# *@
+@* $1$     switch1[<img src="switch.svg" width="80" height="80"/> Switch 1<br/>192.168.20.2] #1# *@
+@* $1$     switch2[<img src="switch.svg" width="80" height="80"/> Switch 2<br/>192.168.20.3] #1# *@
+@* $1$     PC1[<img src="computer.svg" width="80" height="80"/> PC 1<br/>192.168.20.101] #1# *@
+@* $1$     PC2[<img src="computer.svg" width="80" height="80"/> PC 2<br/>192.168.20.102] #1# *@
+@* $1$     PC3[<img src="computer.svg" width="80" height="80"/> PC 3<br/>192.168.20.103] #1# *@
+@* $1$     PC4[<img src="computer.svg" width="80" height="80"/> PC 4<br/>192.168.20.104] #1# *@
+@* $1$     server1[<img src="server.svg" width="80" height="80"/> Server 1<br/>192.168.20.201] #1# *@
+@* $1$     server2[<img src="server.svg" width="80" height="80"/> Server 2<br/>192.168.20.202] #1# *@
+@* $1$     end #1# *@
+@* $1$ #1# *@
+@* $1$     router -->|GigabitEthernet 0/0/1 - GigabitEthernet 0/0/1| router2 #1# *@
+@* $1$      #1# *@
+@* $1$     router -->|GigabitEthernet 0/0/2 - GigabitEthernet 0/0/1| switch1 #1# *@
+@* $1$     switch1 -->|FastEthernet 0/0/1 - FastEthernet 0/1| PC1 #1# *@
+@* $1$     switch1 -->|FastEthernet 0/0/2 - FastEthernet 0/1| PC2 #1# *@
+@* $1$     switch1 -->|GigabitEthernet 0/0/2 - GigabitEthernet 0/1| server1 #1# *@
+@* $1$     router -->|GigabitEthernet 0/0/3 - GigabitEthernet 0/0/1| switch2 #1# *@
+@* $1$     switch2 -->|FastEthernet 0/0/1 - FastEthernet 0/1| PC3 #1# *@
+@* $1$     switch2 -->|FastEthernet 0/0/2 - FastEthernet 0/1| PC4 #1# *@
+@* $1$     switch2 -->|GigabitEthernet 0/0/2 - GigabitEthernet 0/1| server2 #1# *@
+@* $1$ #1# *@
+@* $1$     router2 -->|GigabitEthernet 0/0/2 - GigabitEthernet 0/0/1| switch3 #1# *@
+@* $1$     switch3 -->|FastEthernet 0/0/1 - FastEthernet 0/1| PC5 #1# *@
+@* $1$     switch3 -->|FastEthernet 0/0/2 - FastEthernet 0/1| PC6 #1# *@
+@* $1$     switch3 -->|GigabitEthernet 0/0/2 - GigabitEthernet 0/1| server3 #1# *@
+@* $1$     router2 -->|GigabitEthernet 0/0/3 - GigabitEthernet 0/0/1| switch4 #1# *@
+@* $1$     switch4 -->|FastEthernet 0/0/1 - FastEthernet 0/1| PC7 #1# *@
+@* $1$     switch4 -->|FastEthernet 0/0/2 - FastEthernet 0/1| PC8 #1# *@
+@* $1$     switch4 -->|GigabitEthernet 0/0/2 - GigabitEthernet 0/1| server4 #1# *@
+@* $1$ </div> #1# *@
+@* *@
 <div class="mermaid">
-    graph LR
-    subgraph Internet
-    direction LR
-    inet[Internet]
-    end
+    graph TB
 
-    subgraph LAN
+    @* subgraph Gateway[LAN1 192.168.1.0/24] *@
+    @* direction TB *@
+    router3[<img src="router.svg" width="80" height="80"/><img src="green.svg" width="20" height="20"/>Gateway<br/>192.168.1.1]
+
+    subgraph lan1[LAN1 192.168.10.0/24]
     direction TB
-    router[<img src="router.svg" width="80" height="80"/> Router<br/>192.168.1.1]
-    switch1[Switch 1<br/>192.168.1.2]
-    switch2[Switch 2<br/>192.168.1.3]
-    PC1[PC 1<br/>192.168.1.101]
-    PC2[PC 2<br/>192.168.1.102]
-    PC3[PC 3<br/>192.168.1.103]
-    PC4[PC 4<br/>192.168.1.104]
-    server1[Server 1<br/>192.168.1.201]
-    server2[Server 2<br/>192.168.1.202]
+    router2[<img src="router.svg" width="80" height="80"/><img src="green.svg" width="20" height="20"/> Router Serverovna<br/>192.168.10.1]
+    switch3[<img src="switch.svg" width="80" height="80"/><img src="green.svg" width="20" height="20"/> Switch<br/>192.168.10.2]
+    server3[<img src="server.svg" width="80" height="80"/><img src="green.svg" width="20" height="20"/> Server 1<br/>192.168.10.201]
+    server4[<img src="server.svg" width="80" height="80"/><img src="green.svg" width="20" height="20"/> Server 2<br/>192.168.10.202]
+    server5[<img src="server.svg" width="80" height="80"/><img src="red.svg" width="20" height="20"/> Server 3<br/>192.168.10.203]
+    server6[<img src="server.svg" width="80" height="80"/><img src="green.svg" width="20" height="20"/> Server 4<br/>192.168.10.204]
     end
 
-    inet -->|Port 0/1| router
-    router -->|Port 1/1| switch1
-    switch1 -->|Port 2/1| PC1
-    switch1 -->|Port 2/2| PC2
-    switch1 -->|Port 2/3| server1
-    router -->|Port 1/2| switch2
-    switch2 -->|Port 3/1| PC3
-    switch2 -->|Port 3/2| PC4
-    switch2 -->|Port 3/3| server2
-</div>
+    subgraph lan2[LAN2 192.168.20.0/24]
+    direction TB
+    router[<img src="router.svg" width="80" height="80"/><img src="red.svg" width="20" height="20"/> Router Internát<br/>192.168.20.1]
+    switch1[<img src="switch.svg" width="80" height="80"/><img src="red.svg" width="20" height="20"/> Switch 1<br/>192.168.20.2]
+    switch2[<img src="switch.svg" width="80" height="80"/><img src="red.svg" width="20" height="20"/> Switch 2<br/>192.168.20.3]
+    PC1[<img src="computer.svg" width="80" height="80"/><img src="red.svg" width="20" height="20"/> PC 1<br/>192.168.20.101]
+    PC2[<img src="computer.svg" width="80" height="80"/><img src="red.svg" width="20" height="20"/> PC 2<br/>192.168.20.102]
+    PC3[<img src="computer.svg" width="80" height="80"/><img src="red.svg" width="20" height="20"/> PC 3<br/>192.168.20.103]
+    PC4[<img src="computer.svg" width="80" height="80"/><img src="red.svg" width="20" height="20"/> PC 4<br/>192.168.20.104]
+    server1[<img src="server.svg" width="80" height="80"/><img src="red.svg" width="20" height="20"/> Server 1<br/>192.168.20.201]
+    server2[<img src="server.svg" width="80" height="80"/><img src="red.svg" width="20" height="20"/> Server 2<br/>192.168.20.202]
+    end
 
-@* *@
-@* *@
-@* @code { *@
-@*     // IJSObjectReference mermaidmodule; *@
-@*     // protected override async Task OnAfterRenderAsync(bool firstRender) *@
-@*     // { *@
-@*     //     if(firstRender) *@
-@*     //     { *@
-@*     //         mermaidmodule = await JsRuntime.InvokeAsync<IJSObjectReference>("import", "./modules/mermaidmodule.js"); *@
-@*     //         await mermaidmodule.InvokeVoidAsync("Initialize"); *@
-@*     //         await mermaidmodule.InvokeVoidAsync("Render", "mermaid"); *@
-@*     //          *@
-@*     //     } *@
-@*     //     else *@
-@*     //     { *@
-@*     //         await mermaidmodule.InvokeVoidAsync("Render", "mermaid"); *@
-@*     //          *@
-@*     //     } *@
-@*     // } *@
-@* } *@
+    router3 -->|Gi 0/0/1 - Gi 0/0/1| router
+    router3 -->|Gi 0/0/2 - Gi 0/0/1| router2
+
+    router -->|Gi 0/0/2 - Gi 0/0/1| switch1
+    router -->|Gi 0/0/3 - Gi 0/0/1| switch2
+    router2 -->|Gi 0/0/2 - Gi 0/0/1| switch3
+
+    switch1 -->|Fa 0/0/1 - Fa 0/1| PC1
+    switch1 -->|Fa 0/0/2 - Fa 0/1| PC2
+    switch1 -->|Gi 0/0/2 - Gi 0/1| server1
+
+    switch2 -->|Fa 0/0/1 - Fa 0/1| PC3
+    switch2 -->|Fa 0/0/2 - Fa 0/1| PC4
+    switch2 -->|Gi 0/0/3 - Gi 0/1| server2
+
+    switch3 -->|Gi 0/0/2 - Gi 0/1| server3
+    switch3 -->|Gi 0/0/3 - Gi 0/1| server4
+    switch3 -->|Gi 0/0/4 - Gi 0/1| server5
+    switch3 -->|Gi 0/0/5 - Gi 0/1| server6
+</div>
